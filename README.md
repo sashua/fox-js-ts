@@ -1,3 +1,1 @@
-# JS or TS
-
-JS || TS
+# JS || TS
