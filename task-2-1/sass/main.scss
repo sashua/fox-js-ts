@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  font-family: sans-serif;
+  line-height: 1;
+}
+
+%box {
+  padding: 0.5em 1em;
+  border: 4px solid #1a1a1a;
+  border-radius: 8px;
+}
+
+.color {
+  @extend %box;
+
+  font-size: 2rem;
+  color: white;
+  background-color: #1a1a1a;
+
+  &__value {
+    color: cornflowerblue;
+  }
+}
+
+.button {
+  @extend %box;
+
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  background-color: white;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+    background-color: #1a1a1a;
+  }
+}
