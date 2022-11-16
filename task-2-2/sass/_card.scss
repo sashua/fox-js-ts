@@ -1,0 +1,37 @@
+.card {
+  display: flex;
+  gap: 1.5em;
+
+  &__image {
+    flex: 0 0 30%;
+    @include gradientBorder($width: 4px, $radius: 8px);
+    overflow: hidden;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    border-bottom: 2px solid $secondaryColor;
+  }
+
+  &__name {
+    font: inherit;
+  }
+
+  &__price {
+    color: $accentColor;
+  }
+
+  &__info {
+    line-height: 1.5;
+    text-align: justify;
+    color: $secondaryColor;
+  }
+}

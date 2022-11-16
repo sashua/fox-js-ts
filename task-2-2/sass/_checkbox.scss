@@ -1,0 +1,21 @@
+.checkbox {
+  &__input {
+    display: none;
+  }
+
+  &__name {
+    padding: 0.25em 1em;
+
+    font-weight: 500;
+    line-height: 1;
+    color: $accentColor;
+
+    @include gradientBorder($width: 2px, $radius: 4px);
+  }
+
+  &:hover &__name,
+  &__input:checked + &__name {
+    color: #fff;
+    background: $accentGradientColor border-box;
+  }
+}

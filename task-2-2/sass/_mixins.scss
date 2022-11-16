@@ -1,0 +1,12 @@
+@mixin gradientBorder(
+  $bgColor: #fff,
+  $color1: $accentColor,
+  $color2: $accentDarkColor,
+  $width,
+  $radius
+) {
+  background: linear-gradient($bgColor, $bgColor) padding-box,
+    linear-gradient(to right bottom, $color1 40%, $color2 95%) border-box;
+  border: $width solid transparent;
+  border-radius: $radius;
+}

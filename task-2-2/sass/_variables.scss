@@ -1,0 +1,11 @@
+$primaryFont: "Nunito", sans-serif;
+
+$accentColor: #ca965c;
+$accentDarkColor: #876445;
+$accentGradientColor: linear-gradient(
+  to right bottom,
+  $accentColor 40%,
+  $accentDarkColor 95%
+);
+$primaryColor: #2d2d2d;
+$secondaryColor: #929292;
