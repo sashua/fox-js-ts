@@ -1,0 +1,43 @@
+.checkbox {
+  &__caption {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+    cursor: pointer;
+
+    &::before {
+      @include border;
+
+      content: "";
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      padding: 2px;
+      background-clip: content-box;
+      transition: background-color $transitionDefault,
+        border-color $transitionDefault;
+    }
+
+    .checkbox--circle &::before {
+      border-radius: 50%;
+    }
+
+    .checkbox__input:checked + &::before {
+      background-color: $accentColor;
+      border-color: $accentColor;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: none;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+}

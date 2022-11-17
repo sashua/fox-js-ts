@@ -1,0 +1,67 @@
+.field {
+  position: relative;
+
+  &__error {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(100%);
+    font-size: 0.875em;
+    color: $errorColor;
+  }
+
+  &__title {
+    display: block;
+    line-height: 1.5;
+    font-weight: 700;
+    color: $accentColor;
+
+    .field--required &::after {
+      content: " *";
+    }
+  }
+
+  &__text {
+    @include border;
+
+    width: 100%;
+    padding: 0.5em;
+
+    &--invalid {
+      border-color: $errorColor;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &:focus {
+      border-color: $accentActiveColor;
+    }
+
+    &::placeholder {
+      color: $placeholderColor;
+    }
+  }
+
+  &__items {
+    display: flex;
+    gap: 1em;
+    margin-top: 0.25em;
+  }
+
+  &__select {
+    @include border;
+
+    width: 100%;
+    padding: 0.5em;
+  }
+
+  &__file::-webkit-file-upload-button {
+    @extend .button;
+
+    margin-right: 1em;
+  }
+}

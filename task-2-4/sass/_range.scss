@@ -1,0 +1,38 @@
+.range {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  width: 100%;
+
+  &__input {
+    -webkit-appearance: none;
+    flex-grow: 1;
+    cursor: pointer;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 1em;
+      height: 1em;
+      margin-top: -0.25em;
+      border-radius: 50%;
+      background: $accentColor;
+    }
+
+    &::-webkit-slider-runnable-track {
+      height: 0.5em;
+      background-color: $borderColor;
+      border-radius: 0.25em;
+    }
+  }
+
+  &__value {
+    @include border($accentColor);
+
+    min-width: 3.5em;
+    padding: 0.5em;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    background-color: $accentColor;
+  }
+}

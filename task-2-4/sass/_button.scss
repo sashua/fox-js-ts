@@ -1,0 +1,14 @@
+.button {
+  @include border($accentColor);
+
+  padding: 0.5em 1em;
+  color: #fff;
+  background-color: $accentColor;
+  transition: background-color $transitionDefault,
+    border-color $transitionDefault;
+
+  &:hover {
+    background-color: $accentActiveColor;
+    border-color: $accentActiveColor;
+  }
+}
