@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700&family=Oswald:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <form class="form js-form" autocomplete="off">
+      <div class="form__header container">
+        <h1 class="form__title">Create Account</h1>
+      </div>
+
+      <div class="form__fields container">
+        <!-- First and Last name -->
+        <label class="field field--required">
+          <span class="field__title">First name</span>
+          <input
+            class="field__text"
+            type="text"
+            name="firstName"
+            placeholder="enter your first name"
+            required
+          />
+          <span class="field__error"></span>
+        </label>
+        <label class="field">
+          <span class="field__title">Last name</span>
+          <input
+            class="field__text"
+            type="text"
+            name="lastName"
+            placeholder="enter your last name"
+          />
+        </label>
+
+        <!-- Email -->
+        <label class="field field--required form__field--wide">
+          <span class="field__title">Email</span>
+          <input
+            class="field__text"
+            type="email"
+            name="email"
+            placeholder="enter your email"
+            required
+          />
+          <span class="field__error"></span>
+        </label>
+
+        <!-- Password -->
+        <label class="field field--required">
+          <span class="field__title">Password</span>
+          <input
+            class="field__text"
+            type="password"
+            name="password"
+            placeholder="enter your password"
+            minlength="8"
+            required
+          />
+          <span class="field__error"></span>
+        </label>
+        <label class="field field--required">
+          <span class="field__title">Confirm Password</span>
+          <input
+            class="field__text"
+            type="password"
+            name="passwordConfirm"
+            placeholder="enter your password again"
+            minlength="8"
+            required
+          />
+          <span class="field__error"></span>
+        </label>
+
+        <!-- Gender -->
+        <fieldset class="field">
+          <legend class="field__title">Gender</legend>
+          <div class="field__items">
+            <label class="checkbox checkbox--circle">
+              <input
+                class="checkbox__input"
+                type="radio"
+                name="gender"
+                value="male"
+              />
+              <span class="checkbox__caption">Male</span>
+            </label>
+            <label class="checkbox checkbox--circle">
+              <input
+                class="checkbox__input"
+                type="radio"
+                name="gender"
+                value="female"
+              />
+              <span class="checkbox__caption">Female</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Hobbies -->
+        <fieldset class="field">
+          <legend class="field__title">Hobbies</legend>
+          <div class="field__items">
+            <label class="checkbox">
+              <input
+                class="checkbox__input"
+                type="checkbox"
+                name="hobby"
+                value="music"
+              />
+              <span class="checkbox__caption">Music</span>
+            </label>
+            <label class="checkbox">
+              <input
+                class="checkbox__input"
+                type="checkbox"
+                name="hobby"
+                value="sports"
+              />
+              <span class="checkbox__caption">Sports</span>
+            </label>
+            <label class="checkbox">
+              <input
+                class="checkbox__input"
+                type="checkbox"
+                name="hobby"
+                value="travel"
+              />
+              <span class="checkbox__caption">Travel</span>
+            </label>
+            <label class="checkbox">
+              <input
+                class="checkbox__input"
+                type="checkbox"
+                name="hobby"
+                value="movies"
+              />
+              <span class="checkbox__caption">Movies</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Income source -->
+        <label class="field">
+          <span class="field__title">Source of Income</span>
+          <select class="field__select" name="incomeSource">
+            <option value="employed">Employed</option>
+            <option value="selfEmployed,">Self-employed</option>
+            <option value="unemployed">Unemployed</option>
+          </select>
+        </label>
+
+        <!-- Income value -->
+        <label class="field">
+          <span class="field__title">Income</span>
+          <span class="range js-range">
+            <input
+              class="range__input"
+              type="range"
+              name="incomeValue"
+              min="0"
+              max="99"
+              step="1"
+              value="20"
+            />
+            <span class="range__value">
+              <output class="range__output">20</output>
+              k
+            </span>
+          </span>
+        </label>
+
+        <!-- Upload picture -->
+        <label class="field">
+          <span class="field__title">Upload Profile Picture</span>
+          <input class="field__file" type="file" name="file" />
+        </label>
+
+        <!-- Age -->
+        <label class="field">
+          <span class="field__title">Age</span>
+          <input
+            class="field__text"
+            type="number"
+            name="age"
+            min="12"
+            max="120"
+          />
+        </label>
+
+        <!-- Bio -->
+        <label class="field form__field--wide">
+          <span class="field__title">Bio</span>
+          <textarea class="field__text" name="bio" rows="4"></textarea>
+        </label>
+      </div>
+
+      <div class="form__footer container">
+        <button class="button" type="submit">Create</button>
+      </div>
+    </form>
+
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>

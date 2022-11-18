@@ -1,0 +1,14 @@
+@mixin border(
+  $color: $borderColor,
+  $width: $borderWidth,
+  $radius: $borderRadiusM
+) {
+  border: $width solid $color;
+  border-radius: $radius;
+}
+
+@mixin media-desktop {
+  @media screen and (min-width: $desktopBreakpoint) {
+    @content;
+  }
+}
