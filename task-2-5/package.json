@@ -1,0 +1,15 @@
+{
+  "name": "task-2-5",
+  "version": "1.0.0",
+  "description": "Task 2.5 - Create weather widget with search",
+  "private": true,
+  "scripts": {
+    "start": "sass --watch sass/main.scss css/style.css",
+    "build": "sass sass/main.scss css/style.css"
+  },
+  "author": "Oleksandr Sereda <sereda.san@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.55.0"
+  }
+}

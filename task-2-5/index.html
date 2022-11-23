@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2.5</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="widget">
+      <form class="search" autocomplete="off">
+        <button class="search__button" type="submit" aria-label="Search">
+          <svg width="24" height="24">
+            <use href="./img/icons.svg#icon-search"></use>
+          </svg>
+        </button>
+        <input
+          class="search__query"
+          type="text"
+          name="query"
+          placeholder="Search City or Zip code"
+        />
+        <button class="search__button" type="reset" aria-label="Clear">
+          <svg width="24" height="24">
+            <use href="./img/icons.svg#icon-clear"></use>
+          </svg>
+        </button>
+
+        <ul class="locations"></ul>
+        <p class="error"></p>
+        <div class="loader" hidden></div>
+      </form>
+
+      <div class="weather">
+        <div class="current"></div>
+        <ul class="forecast"></ul>
+      </div>
+    </div>
+
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>

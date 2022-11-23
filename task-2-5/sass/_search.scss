@@ -1,0 +1,91 @@
+.search {
+  position: relative;
+  display: flex;
+  margin-bottom: 2em;
+  color: $searchTextColor;
+  background-color: $searchBgColor;
+  box-shadow: $shadow;
+
+  &__query {
+    flex: 1;
+    padding: 0.5em 0;
+
+    &::placeholder {
+      color: $searchPlaceholderColor;
+    }
+  }
+
+  &__button {
+    padding: 0.25em;
+    color: $searchPlaceholderColor;
+
+    &:hover {
+      color: $searchTextColor;
+    }
+
+    svg {
+      width: 1.25em;
+      height: 1.25em;
+    }
+  }
+}
+
+// ---- Dropdowns ----
+%dropdown {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  box-shadow: $shadow;
+}
+
+.locations {
+  @extend %dropdown;
+  background-color: $searchBgColor;
+
+  &__item {
+    padding: 0.5em 1em;
+    border-top: 1px solid $searchBorderColor;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $searchBorderColor;
+    }
+  }
+}
+
+.error {
+  @extend %dropdown;
+  padding: 0 1.5em;
+  line-height: 2;
+  color: $errorTextColor;
+  background-color: $errorBgColor;
+}
+
+.loader {
+  @extend %dropdown;
+  bottom: -0.5em;
+  width: 0.75em;
+  height: 0.75em;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 1.5em 0 #fff, -1.5em 0 #fff;
+  animation: flash 0.5s ease-out infinite alternate;
+}
+
+@keyframes flash {
+  0% {
+    background-color: #fff2;
+    box-shadow: 1.5em 0 #fff2, -1.5em 0 #fff;
+  }
+  50% {
+    background-color: #fff;
+    box-shadow: 1.5em 0 #fff2, -1.5em 0 #fff2;
+  }
+  100% {
+    background-color: #fff2;
+    box-shadow: 1.5em 0 #fff, -1.5em 0 #fff2;
+  }
+}
