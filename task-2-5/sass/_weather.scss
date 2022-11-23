@@ -1,0 +1,54 @@
+.weather {
+  color: $weatherTextColor;
+  box-shadow: $shadow;
+}
+
+.current {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75em;
+  padding: 0 1em 0 1.5em;
+
+  background-color: $weatherCurrentBgColor;
+
+  &__block {
+    display: flex;
+    flex-flow: column;
+    gap: 0.5em;
+    padding: 1em 0;
+  }
+
+  &__temp {
+    font-size: 2.5rem;
+    color: $weatherTempColor;
+  }
+}
+
+.forecast {
+  padding: 0 1.5em;
+  background-color: $weatherForecastBgColor;
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
+    align-items: center;
+    gap: 1em;
+    padding-bottom: 1.75em;
+
+    &:first-child {
+      padding-top: 1.75em;
+    }
+  }
+
+  &__day {
+    text-transform: uppercase;
+  }
+
+  &__block {
+    display: flex;
+    flex-flow: column;
+    align-items: end;
+    gap: 0.5em;
+  }
+}
