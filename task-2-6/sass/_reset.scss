@@ -1,0 +1,36 @@
+body {
+  padding: 4em;
+  background-color: $bodyBgColor;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button,
+input {
+  padding: 0;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+svg {
+  display: block;
+  height: auto;
+  fill: currentColor;
+}

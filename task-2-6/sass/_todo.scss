@@ -1,0 +1,46 @@
+.todo {
+  margin: 0 auto;
+  width: $boxWidth;
+  padding: 3em 1.5em 2em;
+  text-align: center;
+  color: $textColor;
+  background: $whiteColor;
+  box-shadow: $boxShadow;
+  border-radius: $boxRadius;
+
+  &__title {
+    margin-bottom: 1em;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $titleColor;
+  }
+
+  &__items {
+    display: flex;
+    flex-flow: column;
+    gap: 1em;
+    margin-bottom: 2em;
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  &__clear {
+    padding: 0.5em 1em;
+    line-height: 1;
+    color: $clearColor;
+    background: transparent;
+    border-radius: 1em;
+
+    &:hover,
+    &:focus {
+      background: $clearColor;
+      color: $whiteColor;
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+}

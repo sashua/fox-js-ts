@@ -1,0 +1,53 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+
+  &__text {
+    flex: 1;
+    line-height: 1.5;
+    text-align: left;
+    padding: 0.25em 1em;
+    border-radius: 1em;
+
+    &[contenteditable="true"] {
+      background-color: $editBgColor;
+      outline: none;
+    }
+  }
+
+  &__button {
+    padding: 0.25em;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.25);
+    }
+
+    &--edit {
+      color: $editIconColor;
+
+      &[data-action="edit"] {
+        .item__svg--edit {
+          visibility: visible;
+        }
+        .item__svg--save {
+          visibility: hidden;
+        }
+      }
+
+      &[data-action="save"] {
+        .item__svg--edit {
+          visibility: hidden;
+        }
+        .item__svg--save {
+          visibility: visible;
+        }
+      }
+    }
+
+    &--delete {
+      color: $deleteIconColor;
+    }
+  }
+}
