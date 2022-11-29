@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2.6</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="todo">
+      <h2 class="todo__title">Grocery Bud</h2>
+      <form class="new">
+        <input
+          class="new__text"
+          type="text"
+          name="text"
+          placeholder="e.g. eggs"
+        />
+        <button class="new__button" type="submit" aria-label="Add">
+          <svg width="32" height="32">
+            <use href="./img/icons.svg#circle-plus"></use>
+          </svg>
+        </button>
+      </form>
+      <ul class="todo__items hidden"></ul>
+      <button class="todo__clear hidden" type="button">Clear items</button>
+    </div>
+    <script src="./js/main.js" type="module"></script>
+  </body>
+</html>

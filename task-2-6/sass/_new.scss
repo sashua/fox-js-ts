@@ -1,0 +1,27 @@
+.new {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2em;
+  background: $editBgColor;
+  border-radius: 1em;
+
+  &__text {
+    flex: 1;
+    padding: 0.5em 1em;
+    line-height: 1;
+  }
+
+  &__button {
+    color: $addIconColor;
+
+    &:hover,
+    .new:focus-within & {
+      transform: scale(1.25);
+    }
+
+    svg {
+      width: 2em;
+      height: 2em;
+    }
+  }
+}
