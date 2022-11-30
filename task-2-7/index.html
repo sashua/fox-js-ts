@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2.7</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__container">
+        <h1 class="header__title">Where in the world?</h1>
+        <label class="theme">
+          <input class="theme__check" type="checkbox" name="isDark" />
+          <svg class="theme__custom-check" width="16" height="16">
+            <use class="theme__icon-sun" href="img/icons.svg#sun"></use>
+            <use class="theme__icon-moon" href="img/icons.svg#moon"></use>
+          </svg>
+          <span class="theme__name">Dark mode</span>
+        </label>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <form class="form" autocomplete="off">
+          <label class="search">
+            <svg class="search__icon" width="16" height="16">
+              <use href="img/icons.svg#magnifying-glass"></use>
+            </svg>
+            <input
+              class="search__input"
+              type="text"
+              name="query"
+              placeholder="Search for a country"
+            />
+          </label>
+
+          <label class="select">
+            <input
+              class="select__input"
+              type="text"
+              name="region"
+              placeholder="Filter by region"
+              readonly
+            />
+            <svg class="select__icon" width="16" height="16">
+              <use href="img/icons.svg#chevron-down"></use>
+            </svg>
+            <ul class="select__options"></ul>
+          </label>
+        </form>
+
+        <ul class="countries"></ul>
+      </div>
+    </main>
+
+    <script src="./js/main.js" type="module"></script>
+  </body>
+</html>

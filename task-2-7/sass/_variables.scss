@@ -1,0 +1,27 @@
+:root {
+  --color-text: #1f2024;
+  --color-header-bg: #fff;
+  --color-body-bg: hsl(293, 4%, 96%);
+  --color-input-bg: #fff;
+  --color-placeholder: #79717a;
+  --color-option-bg: hsl(293, 4%, 92%);
+  --color-country-bg: #fff;
+  --color-value: #4b4952;
+  --color-loader: #4b4952;
+
+  --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  --radius: 4px;
+}
+
+body.dark {
+  --color-text: #fff;
+  --color-header-bg: hsl(293, 4%, 12%);
+  --color-body-bg: hsl(228, 7%, 30%);
+  --color-input-bg: hsl(293, 4%, 18%);
+  --color-placeholder: hsl(293, 4%, 68%);
+  --color-option-bg: hsl(293, 4%, 24%);
+  --color-country-bg: hsl(293, 4%, 40%);
+  --color-value: rgb(255, 255, 255, 0.9);
+  --color-loader: hsl(293, 4%, 40%);
+}
