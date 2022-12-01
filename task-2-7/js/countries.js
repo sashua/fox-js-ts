@@ -5,12 +5,13 @@ export async function fetchCountries() {
       "https://restcountries.com/v3.1/all?" +
         new URLSearchParams({ fields: "name,flags,region,capital,population" })
     );
-    if (!response.ok) {
-      throw new Error(
+    if (response.ok) {
+      fetchedCountries = await response.json();
+    } else {
+      console.log(
         `Server response is not OK: ${response.status} ${response.statusText}`
       );
     }
-    fetchedCountries = await response.json();
   } catch (err) {
     console.log(err);
   } finally {
@@ -27,8 +28,9 @@ export async function fetchCountries() {
 }
 
 export function getRegions(countries) {
-  const regions = [...new Set(countries.map(({ region }) => region))];
-  return regions.sort((a, b) => (a > b ? 1 : -1));
+  return [...new Set(countries.map(({ region }) => region))].sort((a, b) =>
+    a > b ? 1 : -1
+  );
 }
 
 export function filterCountries(countries, { query, region }) {
