@@ -1,0 +1,28 @@
+.theme {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+
+  &__check {
+    display: none;
+  }
+
+  &__custom-check {
+    .theme__icon-sun {
+      display: none;
+    }
+    .theme__icon-moon {
+      display: initial;
+    }
+
+    .theme__check:checked + & {
+      .theme__icon-sun {
+        display: initial;
+      }
+      .theme__icon-moon {
+        display: none;
+      }
+    }
+  }
+}

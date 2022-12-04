@@ -1,0 +1,15 @@
+.header {
+  margin-bottom: 2em;
+  padding: 2em 0;
+  background: var(--color-header-bg);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+  }
+}

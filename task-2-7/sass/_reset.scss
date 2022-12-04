@@ -1,0 +1,47 @@
+body {
+  min-height: 100vh;
+  overflow-y: scroll;
+  color: var(--color-text);
+  background: var(--color-body-bg);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button,
+input {
+  padding: 0;
+  line-height: 1;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+svg {
+  display: block;
+  width: auto;
+  height: 1em;
+  fill: currentColor;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
