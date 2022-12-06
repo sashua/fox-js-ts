@@ -1,0 +1,42 @@
+.section {
+  padding: 4em 0;
+  text-align: center;
+
+  &--products {
+    .container {
+      display: flex;
+      gap: 30px;
+    }
+
+    .filter {
+      flex: 0 12em;
+    }
+
+    .product-list {
+      flex: 1;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__title {
+    @include font($size: 2rem, $weight: 500);
+    margin-bottom: 1em;
+
+    &:before {
+      content: "/ ";
+      color: $baseAccentColor;
+    }
+  }
+
+  &__text {
+    @include font($height: 1.75);
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    color: $lightTextColor;
+  }
+
+  &__button-all {
+    margin-top: 2em;
+  }
+}

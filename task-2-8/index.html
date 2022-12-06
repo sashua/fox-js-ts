@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comfy</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header header--absolute">
+      <div class="container">
+        <nav class="nav header__nav">
+          <ul class="nav__list">
+            <li><a class="link disabled" href="index.html">Home</a></li>
+            <li><a class="link" href="products.html">Products</a></li>
+            <li><a class="link" href="about.html">About</a></li>
+          </ul>
+        </nav>
+        <h1 class="logo header__logo">Comfy</h1>
+        <button
+          class="icon-button header__cart js-open-button"
+          type="button"
+          aria-label="Open shopping cart"
+        >
+          <svg width="18" height="16">
+            <use href="./img/icons.svg#cart-shopping"></use>
+          </svg>
+          <span class="icon-button__sticker">5</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container">
+          <h2 class="hero__title">Rest, Relax, Unwind</h2>
+          <p class="hero__text">Embrace your choices - we do</p>
+          <a class="button" href="products.html">Show now</a>
+        </div>
+      </section>
+
+      <!-- Featured products -->
+      <section class="section">
+        <div class="container">
+          <h2 class="section__title">Featured</h2>
+          <ul class="product-list js-products"></ul>
+          <a
+            class="button button--accent section__button-all"
+            href="products.html"
+            >All products</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p class="logo logo--small">Comfy</p>
+      </div>
+    </footer>
+
+    <!-- Shopping cart -->
+    <div class="backdrop js-backdrop"></div>
+    <div class="cart js-cart">
+      <button
+        class="icon-button icon-button--accent cart__close js-close-button"
+        type="button"
+        aria-label="Open shopping cart"
+      >
+        <svg width="16" height="16">
+          <use href="./img/icons.svg#xmark"></use>
+        </svg>
+      </button>
+      <h2 class="cart__title">Your Bag</h2>
+
+      <ul class="cart__list js-products"></ul>
+      <p class="cart__total js-total">Total: $ 0.00</p>
+      <button
+        class="button button--accent cart__checkout js-checkout-button"
+        type="button"
+      >
+        Checkout
+      </button>
+    </div>
+
+    <!-- Script -->
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>

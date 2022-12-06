@@ -1,0 +1,29 @@
+.button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  border-radius: $baseRadius;
+  box-shadow: 0 0 currentColor;
+  transition: box-shadow $baseTransition;
+
+  &:hover,
+  &:focus {
+    box-shadow: 2px 4px currentColor;
+  }
+
+  &--accent {
+    color: $whiteColor;
+    background: $baseAccentColor;
+    border-color: $baseAccentColor;
+    transition: color $baseTransition, background-color $baseTransition,
+      box-shadow $baseTransition;
+
+    &:hover,
+    &:focus {
+      color: $baseAccentColor;
+      background: transparent;
+      box-shadow: 2px 4px currentColor;
+    }
+  }
+}

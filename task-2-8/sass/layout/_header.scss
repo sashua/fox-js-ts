@@ -1,0 +1,27 @@
+.header {
+  padding: 1.5em 0;
+
+  &--absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: $whiteColor;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 2em;
+  }
+
+  .logo {
+    justify-self: center;
+  }
+
+  &__cart {
+    @include font($size: 1.25rem);
+    justify-self: right;
+  }
+}

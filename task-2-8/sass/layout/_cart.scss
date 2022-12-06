@@ -1,0 +1,53 @@
+.cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 425px;
+  min-height: 100vh;
+  padding: 3em 1em;
+  background: $whiteColor;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: opacity $baseTransition, visibility $baseTransition,
+    transform $baseTransition;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  &__close {
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    @include font($size: 0.75rem);
+    color: $whiteColor;
+  }
+
+  &__title {
+    @include font($family: $accentFontFamily, $size: 2rem);
+    margin-bottom: 1em;
+  }
+
+  &__list {
+    flex: 1;
+    align-self: stretch;
+    display: flex;
+    flex-flow: column;
+    gap: 1em;
+  }
+
+  &__total {
+    @include font($family: $accentFontFamily, $size: 2rem);
+    margin-bottom: 1em;
+  }
+
+  &__checkout {
+    min-width: 60%;
+  }
+}

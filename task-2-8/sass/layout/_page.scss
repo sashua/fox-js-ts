@@ -1,0 +1,13 @@
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+main {
+  flex: 1;
+}

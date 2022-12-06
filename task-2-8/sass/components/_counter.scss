@@ -1,0 +1,23 @@
+.counter {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  &__button {
+    @include font($size: 0.75rem);
+    color: $baseAccentColor;
+  }
+
+  &__input {
+    width: 2em;
+    text-align: center;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      margin: 0;
+    }
+  }
+}
