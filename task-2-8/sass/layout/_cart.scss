@@ -6,8 +6,9 @@
   flex-flow: column;
   align-items: center;
   width: 425px;
-  min-height: 100vh;
-  padding: 3em 1em;
+  height: 100vh;
+  padding: 2.5em 1.25em;
+  overflow-y: auto;
   background: $whiteColor;
   opacity: 0;
   visibility: hidden;
@@ -23,8 +24,8 @@
 
   &__close {
     position: absolute;
-    top: 0.5em;
-    left: 0.5em;
+    top: 0.75em;
+    left: 0.75em;
     @include font($size: 0.75rem);
     color: $whiteColor;
   }
@@ -44,7 +45,7 @@
 
   &__total {
     @include font($family: $accentFontFamily, $size: 2rem);
-    margin-bottom: 1em;
+    margin: 0.75em 0;
   }
 
   &__checkout {

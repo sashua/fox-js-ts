@@ -14,9 +14,10 @@ function productTemplate({ id, img, brand, model, info, price }) {
       <div class="product__price-wrap">
         <p class="product__price">$ ${price.toFixed(2)}</p>
         <button
-          class="icon-button icon-button--accent js-add-button"
+          class="icon-button icon-button--accent"
           type="button"
           aria-label="Add to cart"
+          data-action="buy"
         >
           <svg width="14" height="16">
             <use href="./img/icons.svg#bag-shopping"></use>

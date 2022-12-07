@@ -1,62 +1,52 @@
 import productTemplate from "../templates/cartProductTemplate.js";
 import storage from "../utils/localStorage.js";
 
-const openButtonEl = document.querySelector(".js-open-button");
-const backdropEl = document.querySelector(".js-backdrop");
-const cartEl = document.querySelector(".js-cart");
-const productsEl = cartEl.querySelector(".js-products");
-const totalEl = cartEl.querySelector(".js-total");
+let onChangeHandler = () => null;
+const actions = {
+  open,
+  close,
+  checkout,
+  delete: deleteProduct,
+  inc: (target) => changeProductQty(target, 1),
+  dec: (target) => changeProductQty(target, -1),
+};
+const refs = getRefs();
+bindEvents();
 
-openButtonEl.addEventListener("click", open);
-backdropEl.addEventListener("click", close);
-
-cartEl.addEventListener("click", ({ target }) => {
-  if (target.closest(".js-close-button")) {
-    close();
-    return;
-  }
-  if (target.closest(".js-checkout-button")) {
-    checkout();
-    close();
-    return;
-  }
-
-  const productEl = target.closest(".js-product");
-  if (!productEl) {
-    return;
-  }
-  if (target.closest(".js-delete-button")) {
-    deleteProduct(productEl.id);
-    update();
-    return;
-  }
-  const qtyEl = productEl.querySelector(".js-qty");
-  let qty = Number(qtyEl.value);
-  if (target.closest(".js-inc-button")) {
-    qty += 1;
-    qtyEl.value = qty;
-    setProductQty(productEl.id, qty);
-    update();
-    return;
-  }
-  if (target.closest(".js-dec-button")) {
-    qty -= qty > 1 ? 1 : 0;
-    qtyEl.value = qty;
-    setProductQty(productEl.id, qty);
-    update();
-    return;
-  }
-});
-
-function open() {
-  update();
-  backdropEl.classList.add("active");
-  cartEl.classList.add("active");
+// ------ API ------
+function init({ onChange }) {
+  onChangeHandler = onChange;
 }
 
-function close() {
-  backdropEl.classList.remove("active");
-  cartEl.classList.remove("active");
+function update(props) {
+  let { products } = props || {};
+
+  // Save new products to storage if needed
+  if (products) {
+    storage.set(products);
+  } else {
+    products = storage.get();
+  }
+
+  // Update shopping cart view
+  refs.products.innerHTML = products.map(productTemplate).join("");
+  const total = products.reduce(
+    (total, { price, qty }) => total + price * qty,
+    0
+  );
+  refs.total.textContent = `Total: $ ${total.toFixed(2)}`;
+
+  // Throw event
+  onChangeHandler(
+    products.reduce((obj, { id, qty }) => ({ ...obj, [id]: qty }), {})
+  );
+}
+
+function open() {
+  refs.backdrop.classList.add("active");
+  refs.cart.classList.add("active");
+  document.body.classList.add("no-scroll");
+  update({});
 }
 
 function addProduct(item) {
@@ -67,36 +57,67 @@ function addProduct(item) {
   } else {
     products.push({ ...item, qty: 1 });
   }
-  storage.set(products);
+  update({ products });
 }
 
-function deleteProduct(id) {
+// ------ Handlers ------
+function handleCartClick({ target }) {
+  const buttonEl = target.closest("[data-action]");
+  if (!buttonEl) {
+    return;
+  }
+  const productEl = target.closest(".js-product");
+  const action = buttonEl.dataset.action;
+  actions[action](productEl);
+}
+
+function close() {
+  refs.backdrop.classList.remove("active");
+  refs.cart.classList.remove("active");
+  document.body.classList.remove("no-scroll");
+}
+
+function checkout() {
+  storage.remove();
+  close();
+  update({ products: [] });
+}
+
+function deleteProduct(target) {
+  const id = target.id;
   const products = storage.get().filter((item) => item.id !== id);
-  storage.set(products);
+  update({ products });
 }
 
-function setProductQty(id, qty) {
+function changeProductQty(target, value) {
+  const qtyEl = target.querySelector('input[name="qty"]');
+  let qty = Number(qtyEl.value) + value;
+  qty = qty < 1 ? 1 : qty;
+  qtyEl.value = qty;
+
+  const id = target.id;
   const products = storage.get();
   const found = products.find((item) => item.id === id);
   if (found) {
     found.qty = qty;
   }
-  storage.set(products);
+  update({ products });
 }
 
-function checkout() {
-  alert("Order accepted!");
-  storage.remove();
+// ------ Init ------
+function getRefs() {
+  const cart = document.querySelector(".js-cart");
+  return {
+    cart,
+    products: cart.querySelector(".js-products"),
+    total: cart.querySelector(".js-total"),
+    backdrop: document.querySelector(".js-backdrop"),
+  };
 }
 
-function getTotal(products) {
-  return products.reduce((total, { price, qty }) => total + price * qty, 0);
+function bindEvents() {
+  refs.cart.addEventListener("click", handleCartClick);
+  refs.backdrop.addEventListener("click", close);
 }
 
-function update() {
-  const products = storage.get();
-  productsEl.innerHTML = products.map(productTemplate).join("");
-  totalEl.textContent = `Total: $ ${getTotal(products).toFixed(2)}`;
-}
-
-export default { open, addProduct };
+export default { init, update, open, addProduct };

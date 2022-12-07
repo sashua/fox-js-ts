@@ -1,5 +1,6 @@
 import { STORAGE_KEY } from "./constants.js";
 
+// ------ API ------
 function set(value) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(value));
 }

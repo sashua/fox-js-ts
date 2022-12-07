@@ -372,20 +372,6 @@ img {
   padding: 0.5em;
   transition: transform 0.25s;
 }
-.icon-button__sticker {
-  font-size: 60%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40%;
-  height: 40%;
-  color: #fff;
-  background: #d97819;
-  border-radius: 50%;
-}
 .icon-button:hover, .icon-button:focus {
   transform: scale(1.1);
 }
@@ -394,12 +380,31 @@ img {
   background: #d97819;
   border: 1px solid #d97819;
   border-radius: 50%;
-  transition: color 0.25s, background-color 0.25s;
+  transition: transform 0.25s, color 0.25s, background-color 0.25s;
 }
 .icon-button--accent:hover, .icon-button--accent:focus {
   color: #d97819;
   background: transparent;
-  transform: none;
+}
+.icon-button__sticker {
+  font-size: 0.6em;
+  line-height: 1;
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5em;
+  height: 1.5em;
+  color: #fff;
+  background: #d97819;
+  border: 1px solid #d97819;
+  border-radius: 50%;
+}
+.icon-button--accent .icon-button__sticker {
+  color: #d97819;
+  background: #fff;
 }
 
 .product-list {
@@ -409,13 +414,14 @@ img {
 }
 
 .product {
+  display: flex;
+  flex-flow: column;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px, rgba(0, 0, 0, 0.06) 0px 1px 2px;
 }
 .product__photo {
   position: relative;
   padding-top: 66.6666666667%;
-  margin-bottom: 1em;
 }
 .product__img {
   position: absolute;
@@ -426,24 +432,27 @@ img {
   object-fit: cover;
 }
 .product__info {
-  padding: 0.25em 1em 0.875em;
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  gap: 0.5em;
+  padding: 1.25em 1em;
   text-align: left;
 }
 .product__name {
   font-size: 1.125rem;
   font-weight: 500;
-  margin-bottom: 0.25em;
 }
 .product__text {
   font-size: 0.875rem;
   color: #979fa5;
-  margin-bottom: 0.5em;
 }
 .product__price-wrap {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 1em;
+  margin-top: auto;
 }
 .product__price {
   font-size: 1.375rem;
@@ -611,9 +620,10 @@ body {
   display: flex;
   flex-flow: column;
   min-height: 100vh;
+  overflow-y: scroll;
 }
 body.no-scroll {
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 main {
@@ -661,8 +671,8 @@ main {
   margin-bottom: 0.25em;
 }
 .hero__text {
-  font-size: 1.75rem;
-  margin-bottom: 1em;
+  font-size: 1.5rem;
+  margin-bottom: 2em;
 }
 
 .section {
@@ -696,8 +706,11 @@ main {
   text-align: left;
   color: #979fa5;
 }
+.section__text:not(:last-child) {
+  margin-bottom: 2em;
+}
 .section__button-all {
-  margin-top: 2em;
+  margin-top: 2.5em;
 }
 
 .footer {
@@ -728,8 +741,9 @@ main {
   flex-flow: column;
   align-items: center;
   width: 425px;
-  min-height: 100vh;
-  padding: 3em 1em;
+  height: 100vh;
+  padding: 2.5em 1.25em;
+  overflow-y: auto;
   background: #fff;
   opacity: 0;
   visibility: hidden;
@@ -743,8 +757,8 @@ main {
 }
 .cart__close {
   position: absolute;
-  top: 0.5em;
-  left: 0.5em;
+  top: 0.75em;
+  left: 0.75em;
   font-size: 0.75rem;
   color: #fff;
 }
@@ -763,7 +777,7 @@ main {
 .cart__total {
   font-family: "Kaushan Script", cursive;
   font-size: 2rem;
-  margin-bottom: 1em;
+  margin: 0.75em 0;
 }
 .cart__checkout {
   min-width: 60%;

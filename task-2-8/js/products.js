@@ -1,3 +1,4 @@
+import openButton from "./components/openButton.js";
 import catalog from "./components/catalog.js";
 import filter from "./components/filter.js";
 import cart from "./components/cart.js";
@@ -6,7 +7,19 @@ import { countProps, sortProps, sum } from "./utils/helpers.js";
 import { ALL_COMPANY } from "./utils/constants.js";
 
 let allCompanies = {};
+let cartProducts = {};
 init();
+
+// ------ Handlers ------
+function handleBuyProduct(id) {
+  cart.addProduct(db.getProduct(id));
+}
+
+function handleCartChange(products) {
+  cartProducts = products;
+  openButton.update({ text: sum(...Object.values(products)) });
+  catalog.update({ cartProducts });
+}
 
 function handleFilterChange({ search, company, price }) {
   const products = db.getProducts({
@@ -16,27 +29,34 @@ function handleFilterChange({ search, company, price }) {
   const companies = joinCompanies(allCompanies, getCompanies(products));
 
   filter.update({ companies, company });
-  catalog.render(products, company);
+  catalog.update({ products, company, cartProducts });
 }
 
+// ------ Init ------
 async function init() {
   await db.fetchProducts();
   const products = db.getProducts();
   const [minPrice, maxPrice] = getMinMaxPrice(products);
   allCompanies = getCompanies(products);
 
-  filter.onChange(handleFilterChange);
-  catalog.onAdd((id) => cart.addProduct(db.getProduct(id)));
+  openButton.init({ onClick: cart.open });
 
+  cart.init({ onChange: handleCartChange });
+  cart.update();
+
+  filter.init({ onChange: handleFilterChange });
   filter.update({
     companies: allCompanies,
     price: maxPrice,
     minPrice,
     maxPrice,
   });
-  catalog.render(products);
+
+  catalog.init({ onBuy: handleBuyProduct });
+  catalog.update({ products });
 }
 
+// ------ Helpers ------
 function getCompanies(products) {
   const companies = sortProps(countProps(products, "brand"));
   return { [ALL_COMPANY]: sum(...Object.values(companies)), ...companies };

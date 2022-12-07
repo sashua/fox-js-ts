@@ -9,7 +9,7 @@
   }
 
   &__text {
-    @include font($size: 1.75rem);
-    margin-bottom: 1em;
+    @include font($size: 1.5rem);
+    margin-bottom: 2em;
   }
 }

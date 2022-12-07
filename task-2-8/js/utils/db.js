@@ -3,6 +3,7 @@ import { shuffle, sortByKey } from "./helpers.js";
 
 let products = [];
 
+// ------ API ------
 async function fetchProducts(path = DATA_PATH) {
   const response = await fetch(path);
   products = await response.json();
@@ -25,8 +26,8 @@ function getProducts(filter) {
   );
 }
 
-function getFeaturedProducts(num = 1) {
-  return shuffle(products).slice(0, num);
+function getFeaturedProducts(number = 1) {
+  return shuffle(products).slice(0, number);
 }
 
 function getProduct(id) {

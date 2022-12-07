@@ -1,23 +1,19 @@
 import companyTemplate from "../templates/companyTemplate.js";
 import { ALL_COMPANY } from "../utils/constants.js";
 
-let onChangeCallback = () => null;
-const filterEl = document.querySelector(".js-filter");
-const companiesEl = filterEl.querySelector(".js-companies");
+let onChangeHandler = () => null;
+const refs = getRefs();
+bindEvents();
 
-filterEl.addEventListener("submit", (e) => e.preventDefault());
-
-filterEl.addEventListener("change", (e) => {
-  const formData = new FormData(filterEl);
-  onChangeCallback(Object.fromEntries(formData.entries()));
-});
-
-filterEl.elements.price.value = "100";
-filterEl.elements.price.dispatchEvent(new Event("input"));
+// ------ API ------
+function init({ onChange }) {
+  onChangeHandler = onChange;
+}
 
 function update({ companies, company, price, minPrice, maxPrice }) {
+  const elements = refs.filter.elements;
   if (companies) {
-    companiesEl.innerHTML = Object.entries(companies)
+    refs.companies.innerHTML = Object.entries(companies)
       .map(([company, number]) =>
         companyTemplate({
           company,
@@ -26,10 +22,10 @@ function update({ companies, company, price, minPrice, maxPrice }) {
         })
       )
       .join("");
-    filterEl.elements.company.value = company ?? ALL_COMPANY;
+    elements.company.value = company ?? ALL_COMPANY;
   }
 
-  const priceEl = filterEl.elements.price;
+  const priceEl = elements.price;
   if (minPrice) {
     priceEl.min = minPrice;
   }
@@ -42,8 +38,24 @@ function update({ companies, company, price, minPrice, maxPrice }) {
   }
 }
 
-function onChange(callback) {
-  onChangeCallback = callback;
+// ------ Handlers ------
+function handleFilterChange() {
+  const formData = new FormData(refs.filter);
+  onChangeHandler(Object.fromEntries(formData.entries()));
 }
 
-export default { update, onChange };
+// ------ Init ------
+function getRefs() {
+  const filter = document.querySelector(".js-filter");
+  return {
+    filter,
+    companies: filter.querySelector(".js-companies"),
+  };
+}
+
+function bindEvents() {
+  refs.filter.addEventListener("submit", (e) => e.preventDefault());
+  refs.filter.addEventListener("change", handleFilterChange);
+}
+
+export default { init, update };

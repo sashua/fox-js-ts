@@ -4,21 +4,6 @@
   padding: 0.5em;
   transition: transform $baseTransition;
 
-  &__sticker {
-    @include font($size: 60%);
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40%;
-    height: 40%;
-    color: $whiteColor;
-    background: $baseAccentColor;
-    border-radius: 50%;
-  }
-
   &:hover,
   &:focus {
     transform: scale(1.1);
@@ -29,13 +14,34 @@
     background: $baseAccentColor;
     border: 1px solid $baseAccentColor;
     border-radius: 50%;
-    transition: color $baseTransition, background-color $baseTransition;
+    transition: transform $baseTransition, color $baseTransition,
+      background-color $baseTransition;
 
     &:hover,
     &:focus {
       color: $baseAccentColor;
       background: transparent;
-      transform: none;
+    }
+  }
+
+  &__sticker {
+    @include font($size: 0.6em, $height: 1);
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    color: $whiteColor;
+    background: $baseAccentColor;
+    border: 1px solid $baseAccentColor;
+    border-radius: 50%;
+
+    .icon-button--accent & {
+      color: $baseAccentColor;
+      background: $whiteColor;
     }
   }
 }

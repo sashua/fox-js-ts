@@ -1,28 +1,57 @@
 import productTemplate from "../templates/productTemplate.js";
+import { addSticker } from "../utils/addStickers.js";
 import { ALL_COMPANY } from "../utils/constants.js";
 
-let onAddCallback = () => null;
-const catalogEl = document.querySelector(".js-products");
+const actions = {
+  buy: () => null,
+};
+const refs = getRefs();
+bindEvents();
 
-catalogEl.addEventListener("click", ({ target }) => {
-  const buttonEl = target.closest(".js-add-button");
+// ------ API ------
+function init({ onBuy }) {
+  actions.buy = onBuy;
+}
+
+function update({ products, company, cartProducts }) {
+  if (products) {
+    const filteredProducts =
+      !company || company === ALL_COMPANY
+        ? products
+        : products.filter(({ brand }) => brand === company);
+    refs.catalog.innerHTML = filteredProducts.map(productTemplate).join("");
+  }
+
+  if (cartProducts) {
+    refs.catalog
+      .querySelectorAll('.js-product button[data-action="buy"]')
+      .forEach((button) => {
+        const id = button.closest(".js-product").id;
+        addSticker(button, cartProducts[id]);
+      });
+  }
+}
+
+// ------ Handlers ------
+function handleCatalogClick({ target }) {
+  const buttonEl = target.closest("[data-action]");
   if (!buttonEl) {
     return;
   }
-  const productEl = target.closest(".js-product");
-  onAddCallback(productEl.id);
-});
-
-function render(products, company) {
-  const filteredProducts =
-    !company || company === ALL_COMPANY
-      ? products
-      : products.filter(({ brand }) => brand === company);
-  catalogEl.innerHTML = filteredProducts.map(productTemplate).join("");
+  const action = buttonEl.dataset.action;
+  const id = target.closest(".js-product").id;
+  actions[action](id);
 }
 
-function onAdd(callback) {
-  onAddCallback = callback;
+// ------ Init ------
+function getRefs() {
+  return {
+    catalog: document.querySelector(".js-catalog"),
+  };
 }
 
-export default { render, onAdd };
+function bindEvents() {
+  refs.catalog.addEventListener("click", handleCatalogClick);
+}
+
+export default { init, update };

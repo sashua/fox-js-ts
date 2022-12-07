@@ -20,14 +20,14 @@
         </nav>
         <h1 class="logo header__logo">Comfy</h1>
         <button
-          class="icon-button header__cart js-open-button"
+          class="icon-button header__cart"
           type="button"
           aria-label="Open shopping cart"
+          data-action="open"
         >
           <svg width="18" height="16">
             <use href="./img/icons.svg#cart-shopping"></use>
           </svg>
-          <span class="icon-button__sticker">5</span>
         </button>
       </div>
     </header>
@@ -36,8 +36,10 @@
       <!-- Hero -->
       <section class="hero">
         <div class="container">
-          <h2 class="hero__title">Rest, Relax, Unwind</h2>
-          <p class="hero__text">Embrace your choices - we do</p>
+          <h2 class="hero__title">Find The Right Running Shoes</h2>
+          <p class="hero__text">
+            Everything you need for your running adventures
+          </p>
           <a class="button" href="products.html">Show now</a>
         </div>
       </section>
@@ -46,7 +48,7 @@
       <section class="section">
         <div class="container">
           <h2 class="section__title">Featured</h2>
-          <ul class="product-list js-products"></ul>
+          <ul class="product-list js-catalog"></ul>
           <a
             class="button button--accent section__button-all"
             href="products.html"
@@ -67,21 +69,22 @@
     <div class="backdrop js-backdrop"></div>
     <div class="cart js-cart">
       <button
-        class="icon-button icon-button--accent cart__close js-close-button"
+        class="icon-button icon-button--accent cart__close"
         type="button"
         aria-label="Open shopping cart"
+        data-action="close"
       >
         <svg width="16" height="16">
           <use href="./img/icons.svg#xmark"></use>
         </svg>
       </button>
       <h2 class="cart__title">Your Bag</h2>
-
       <ul class="cart__list js-products"></ul>
       <p class="cart__total js-total">Total: $ 0.00</p>
       <button
-        class="button button--accent cart__checkout js-checkout-button"
+        class="button button--accent cart__checkout"
         type="button"
+        data-action="checkout"
       >
         Checkout
       </button>

@@ -2,9 +2,11 @@ function cardProductTemplate({ id, img, brand, model, info, price, qty }) {
   return `
   <li id="${id}" class="cart-product js-product">
     <button
-      class="icon-button icon-button--accent cart-product__delete js-delete-button"
+      class="icon-button icon-button--accent cart-product__delete"
       type="button"
-      aria-label="Delete from cart">
+      aria-label="Delete from cart"
+      data-action="delete"
+      >
       <svg width="14" height="16">
         <use href="./img/icons.svg#trash"></use>
       </svg>
@@ -20,9 +22,11 @@ function cardProductTemplate({ id, img, brand, model, info, price, qty }) {
     </div>
     <div class="counter">
       <button
-        class="icon-button counter__button js-inc-button"
+        class="icon-button counter__button"
         type="button"
-        aria-label="Increase quantity">
+        aria-label="Increase quantity"
+        data-action="inc"
+        >
         <svg width="16" height="16">
           <use href="./img/icons.svg#chevron-up"></use>
         </svg>
@@ -36,9 +40,11 @@ function cardProductTemplate({ id, img, brand, model, info, price, qty }) {
         disabled
       />
       <button
-        class="icon-button counter__button js-dec-button"
+        class="icon-button counter__button"
         type="button"
-        aria-label="Decrease quantity">
+        aria-label="Decrease quantity"
+        data-action="dec"
+        >
         <svg width="16" height="16">
           <use href="./img/icons.svg#chevron-down"></use>
         </svg>

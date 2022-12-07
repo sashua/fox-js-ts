@@ -1,11 +1,12 @@
 .product {
+  display: flex;
+  flex-flow: column;
   border-radius: $baseRadius;
   box-shadow: $cardShadow;
 
   &__photo {
     position: relative;
     padding-top: calc(100% * 2 / 3);
-    margin-bottom: 1em;
   }
 
   &__img {
@@ -18,26 +19,29 @@
   }
 
   &__info {
-    padding: 0.25em 1em 0.875em;
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    gap: 0.5em;
+    padding: 1.25em 1em;
     text-align: left;
   }
 
   &__name {
     @include font($size: 1.125rem, $weight: 500);
-    margin-bottom: 0.25em;
   }
 
   &__text {
     @include font($size: 0.875rem);
     color: $lightTextColor;
-    margin-bottom: 0.5em;
   }
 
   &__price-wrap {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     gap: 1em;
+    margin-top: auto;
   }
 
   &__price {
