@@ -1,4 +1,11 @@
-function cardProductTemplate({ id, img, brand, model, info, price, qty }) {
+export default function cardProductTemplate({
+  id,
+  img,
+  brand,
+  model,
+  price,
+  qty,
+}) {
   return `
   <li id="${id}" class="cart-product js-product">
     <button
@@ -24,8 +31,8 @@ function cardProductTemplate({ id, img, brand, model, info, price, qty }) {
       <button
         class="icon-button counter__button"
         type="button"
-        aria-label="Increase quantity"
-        data-action="inc"
+        aria-label="Increment quantity"
+        data-action="increment"
         >
         <svg width="16" height="16">
           <use href="./img/icons.svg#chevron-up"></use>
@@ -42,8 +49,8 @@ function cardProductTemplate({ id, img, brand, model, info, price, qty }) {
       <button
         class="icon-button counter__button"
         type="button"
-        aria-label="Decrease quantity"
-        data-action="dec"
+        aria-label="Decrement quantity"
+        data-action="decrement"
         >
         <svg width="16" height="16">
           <use href="./img/icons.svg#chevron-down"></use>
@@ -53,5 +60,3 @@ function cardProductTemplate({ id, img, brand, model, info, price, qty }) {
   </li>
   `;
 }
-
-export default cardProductTemplate;

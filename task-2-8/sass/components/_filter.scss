@@ -2,19 +2,22 @@
   display: flex;
   flex-flow: column;
   gap: 2em;
+
   text-align: left;
 }
 
 .field {
   &__title {
-    @include font($size: 1.125rem, $weight: 500);
     display: block;
     margin-bottom: 0.75em;
+
+    @include font($size: 1.125rem, $weight: 500);
   }
 
   &__text {
     width: 100%;
     padding: 0.5em;
+
     background-color: $lightBgColor;
     border: 1px solid $lightBgColor;
     border-radius: $baseRadius;
@@ -37,10 +40,11 @@
 }
 
 .checkbox {
-  @include font($height: 1);
   display: flex;
   align-items: center;
   gap: 0.5em;
+
+  @include font($height: 1);
   color: $lightTextColor;
   cursor: pointer;
 
@@ -50,6 +54,7 @@
 
   &__custom {
     padding: 2px;
+
     color: transparent;
     border: 1px solid $baseAccentColor;
     border-radius: 50%;
@@ -88,12 +93,14 @@
     display: block;
     width: 100%;
     margin-bottom: 1em;
+
     cursor: pointer;
 
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
       width: 16px;
       height: 16px;
+
       transform: translateY(-5px);
       border-radius: 50%;
       background: $baseAccentColor;
@@ -101,6 +108,7 @@
 
     &::-webkit-slider-runnable-track {
       height: 8px;
+
       border: 1px solid $baseAccentColor;
       border-radius: 4px;
     }

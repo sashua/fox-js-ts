@@ -9,6 +9,7 @@
   height: 100vh;
   padding: 2.5em 1.25em;
   overflow-y: auto;
+
   background: $whiteColor;
   opacity: 0;
   visibility: hidden;
@@ -26,26 +27,28 @@
     position: absolute;
     top: 0.75em;
     left: 0.75em;
+
     @include font($size: 0.75rem);
     color: $whiteColor;
   }
 
   &__title {
-    @include font($family: $accentFontFamily, $size: 2rem);
     margin-bottom: 1em;
+    @include font($family: $accentFontFamily, $size: 2rem);
   }
 
   &__list {
     flex: 1;
     align-self: stretch;
+
     display: flex;
     flex-flow: column;
     gap: 1em;
   }
 
   &__total {
-    @include font($family: $accentFontFamily, $size: 2rem);
     margin: 0.75em 0;
+    @include font($family: $accentFontFamily, $size: 2rem);
   }
 
   &__checkout {

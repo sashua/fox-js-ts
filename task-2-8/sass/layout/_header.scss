@@ -6,6 +6,7 @@
     top: 0;
     left: 0;
     right: 0;
+
     color: $whiteColor;
   }
 
@@ -21,7 +22,7 @@
   }
 
   &__cart {
-    @include font($size: 1.25rem);
     justify-self: right;
+    @include font($size: 1.25rem);
   }
 }

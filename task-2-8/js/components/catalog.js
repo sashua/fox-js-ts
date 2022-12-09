@@ -1,57 +1,70 @@
+import Component from "./Component.js";
+import ShoppingCart from "./ShoppingCart.js";
 import productTemplate from "../templates/productTemplate.js";
-import { addSticker } from "../utils/addStickers.js";
-import { ALL_COMPANY } from "../utils/constants.js";
 
-const actions = {
-  buy: () => null,
-};
-const refs = getRefs();
-bindEvents();
-
-// ------ API ------
-function init({ onBuy }) {
-  actions.buy = onBuy;
-}
-
-function update({ products, company, cartProducts }) {
-  if (products) {
-    const filteredProducts =
-      !company || company === ALL_COMPANY
-        ? products
-        : products.filter(({ brand }) => brand === company);
-    refs.catalog.innerHTML = filteredProducts.map(productTemplate).join("");
+export default class Catalog extends Component {
+  constructor() {
+    super();
+    this.params = { products: [], cartProducts: [] };
+    this.refs = this.getRefs();
+    this.bindEvents();
   }
 
-  if (cartProducts) {
-    refs.catalog
-      .querySelectorAll('.js-product button[data-action="buy"]')
-      .forEach((button) => {
-        const id = button.closest(".js-product").id;
-        addSticker(button, cartProducts[id]);
+  // ------ Component update ------
+  update() {
+    const { products, cartProducts } = this.params;
+    const { catalog, shoppingCart } = this.refs;
+
+    const productsQty = Object.fromEntries(
+      cartProducts.map(({ id, qty }) => [id, qty])
+    );
+
+    // render products list
+    catalog.innerHTML = products
+      .map((item) =>
+        productTemplate({ ...item, qty: productsQty[item.id] ?? 0 })
+      )
+      .join("");
+
+    // update shopping cart
+    shoppingCart.setParams({ cartProducts });
+  }
+
+  // ------ Event handlers ------
+  handleClick = ({ target }) => {
+    if (!target.closest('[data-action="buy"]')) {
+      return;
+    }
+
+    const id = target.closest(".js-product").id;
+    const { products, cartProducts } = this.params;
+
+    // add product to cart
+    const found = cartProducts.find((item) => item.id === id);
+    if (found) {
+      found.qty += 1;
+      this.setParams({ cartProducts: [...cartProducts] });
+    } else {
+      const product = products.find((item) => item.id === id);
+      this.setParams({
+        cartProducts: [...cartProducts, { ...product, qty: 1 }],
       });
-  }
-}
-
-// ------ Handlers ------
-function handleCatalogClick({ target }) {
-  const buttonEl = target.closest("[data-action]");
-  if (!buttonEl) {
-    return;
-  }
-  const action = buttonEl.dataset.action;
-  const id = target.closest(".js-product").id;
-  actions[action](id);
-}
-
-// ------ Init ------
-function getRefs() {
-  return {
-    catalog: document.querySelector(".js-catalog"),
+    }
   };
-}
 
-function bindEvents() {
-  refs.catalog.addEventListener("click", handleCatalogClick);
-}
+  bindEvents() {
+    const { catalog, shoppingCart } = this.refs;
 
-export default { init, update };
+    catalog.addEventListener("click", this.handleClick);
+    shoppingCart.setParams({
+      onChange: (cartProducts) => this.setParams({ cartProducts }),
+    });
+  }
+
+  getRefs() {
+    return {
+      catalog: document.querySelector(".js-catalog"),
+      shoppingCart: new ShoppingCart(),
+    };
+  }
+}

@@ -1,6 +1,5 @@
 import { STORAGE_KEY } from "./constants.js";
 
-// ------ API ------
 function set(value) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(value));
 }
@@ -16,8 +15,4 @@ function get() {
   }
 }
 
-function remove() {
-  localStorage.removeItem(STORAGE_KEY);
-}
-
-export default { set, get, remove };
+export default { set, get };

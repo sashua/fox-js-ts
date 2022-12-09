@@ -1,61 +1,80 @@
 import companyTemplate from "../templates/companyTemplate.js";
+import Component from "./Component.js";
 import { ALL_COMPANY } from "../utils/constants.js";
 
-let onChangeHandler = () => null;
-const refs = getRefs();
-bindEvents();
-
-// ------ API ------
-function init({ onChange }) {
-  onChangeHandler = onChange;
-}
-
-function update({ companies, company, price, minPrice, maxPrice }) {
-  const elements = refs.filter.elements;
-  if (companies) {
-    refs.companies.innerHTML = Object.entries(companies)
-      .map(([company, number]) =>
-        companyTemplate({
-          company,
-          number,
-          value: company,
-        })
-      )
-      .join("");
-    elements.company.value = company ?? ALL_COMPANY;
+export default class Filter extends Component {
+  constructor() {
+    super();
+    this.params = {
+      filter: {
+        query: "",
+        company: "",
+        price: 0,
+      },
+      companies: [],
+      minPrice: 0,
+      maxPrice: 0,
+      onChange: () => null,
+    };
+    this.refs = this.getRefs();
+    this.bindEvents();
   }
 
-  const priceEl = elements.price;
-  if (minPrice) {
-    priceEl.min = minPrice;
-  }
-  if (maxPrice) {
-    priceEl.max = maxPrice;
-  }
-  if (price) {
-    priceEl.value = price;
-    priceEl.dispatchEvent(new Event("input"));
-  }
-}
+  // ------ Component update ------
+  update() {
+    const { filter, companies, minPrice, maxPrice } = this.params;
 
-// ------ Handlers ------
-function handleFilterChange() {
-  const formData = new FormData(refs.filter);
-  onChangeHandler(Object.fromEntries(formData.entries()));
-}
+    const allCompany = {
+      name: ALL_COMPANY,
+      qty: companies.reduce((sum, { qty }) => sum + qty, 0),
+    };
 
-// ------ Init ------
-function getRefs() {
-  const filter = document.querySelector(".js-filter");
-  return {
-    filter,
-    companies: filter.querySelector(".js-companies"),
+    // render companies list
+    this.refs.companies.innerHTML = [
+      companyTemplate(allCompany),
+      ...companies.map(companyTemplate),
+    ].join("");
+
+    // set form values
+    const elements = this.refs.filter.elements;
+    elements.company.value = filter.company || ALL_COMPANY;
+    elements.query.value = filter.query;
+    elements.price.min = minPrice;
+    elements.price.max = maxPrice;
+    elements.price.value = filter.price;
+    this.updatePriceOutput();
+  }
+
+  // ------ Helpers ------
+  updatePriceOutput = () => {
+    const { price, priceOutput } = this.refs.filter.elements;
+    priceOutput.value = `$ ${Number(price.value).toFixed(2)}`;
   };
-}
 
-function bindEvents() {
-  refs.filter.addEventListener("submit", (e) => e.preventDefault());
-  refs.filter.addEventListener("change", handleFilterChange);
-}
+  // ------ Event handlers ------
+  handleChange = () => {
+    const { query, company, price } = this.refs.filter.elements;
 
-export default { init, update };
+    // fire onChange event
+    this.params.onChange({
+      query: query.value,
+      company: company.value === ALL_COMPANY ? "" : company.value,
+      price: Number(price.value),
+    });
+  };
+
+  bindEvents() {
+    const { filter } = this.refs;
+    filter.addEventListener("submit", (e) => e.preventDefault());
+    filter.addEventListener("change", this.handleChange);
+    filter.addEventListener("input", this.updatePriceOutput);
+  }
+
+  getRefs() {
+    const filter = document.querySelector(".js-filter");
+    return {
+      filter,
+      companies: filter.querySelector(".js-companies"),
+    };
+  }
+}

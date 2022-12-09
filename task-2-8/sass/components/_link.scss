@@ -1,7 +1,8 @@
 .link {
-  @include font($weight: 500);
   display: inline-block;
   padding: 0.5em 0;
+
+  @include font($weight: 500);
   box-shadow: 0 0 currentColor;
   transition: box-shadow $baseTransition;
 

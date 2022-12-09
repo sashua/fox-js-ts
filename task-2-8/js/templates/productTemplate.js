@@ -1,4 +1,12 @@
-function productTemplate({ id, img, brand, model, info, price }) {
+export default function productTemplate({
+  id,
+  img,
+  brand,
+  model,
+  info,
+  price,
+  qty,
+}) {
   return `
   <li id="${id}" class="product js-product">
     <div class="product__photo">
@@ -22,10 +30,11 @@ function productTemplate({ id, img, brand, model, info, price }) {
           <svg width="14" height="16">
             <use href="./img/icons.svg#bag-shopping"></use>
           </svg>
+          <span class="icon-button__sticker ${
+            qty ? "active" : ""
+          }">${qty}</span>
         </button>
       </div>
     </div>
   </li>`;
 }
-
-export default productTemplate;

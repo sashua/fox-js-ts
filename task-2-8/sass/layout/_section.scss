@@ -19,8 +19,8 @@
   }
 
   &__title {
-    @include font($size: 2rem, $weight: 500);
     margin-bottom: 1em;
+    @include font($size: 2rem, $weight: 500);
 
     &:before {
       content: "/ ";
@@ -29,9 +29,10 @@
   }
 
   &__text {
-    @include font($height: 1.75);
     max-width: 800px;
     margin: 0 auto;
+
+    @include font($height: 1.75);
     text-align: left;
     color: $lightTextColor;
 

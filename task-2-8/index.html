@@ -20,14 +20,15 @@
         </nav>
         <h1 class="logo header__logo">Comfy</h1>
         <button
-          class="icon-button header__cart"
+          class="icon-button header__cart js-open-button"
           type="button"
-          aria-label="Open shopping cart"
           data-action="open"
+          aria-label="Open shopping cart"
         >
           <svg width="18" height="16">
             <use href="./img/icons.svg#cart-shopping"></use>
           </svg>
+          <span class="icon-button__sticker js-total-qty">0</span>
         </button>
       </div>
     </header>
@@ -80,7 +81,7 @@
       </button>
       <h2 class="cart__title">Your Bag</h2>
       <ul class="cart__list js-products"></ul>
-      <p class="cart__total js-total">Total: $ 0.00</p>
+      <p class="cart__total js-total-sum">Total: $ 0.00</p>
       <button
         class="button button--accent cart__checkout"
         type="button"

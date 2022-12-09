@@ -1,15 +1,16 @@
 .hero {
   padding: 250px 0;
+
   color: $whiteColor;
-  background: $heroGradient, center / cover no-repeat url("../img/river-bg.jpg");
+  background: $heroBgGradient, center / cover no-repeat url($heroBgImage);
 
   &__title {
-    @include font($family: $accentFontFamily, $size: 3.5rem);
     margin-bottom: 0.25em;
+    @include font($family: $accentFontFamily, $size: 3.5rem);
   }
 
   &__text {
-    @include font($size: 1.5rem);
     margin-bottom: 2em;
+    @include font($size: 1.5rem);
   }
 }
