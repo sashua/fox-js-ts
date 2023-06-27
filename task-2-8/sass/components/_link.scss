@@ -1,0 +1,23 @@
+.link {
+  display: inline-block;
+  padding: 0.5em 0;
+
+  @include font($weight: 500);
+  box-shadow: 0 0 currentColor;
+  transition: box-shadow $baseTransition;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 4px currentColor;
+  }
+
+  &.disabled {
+    pointer-events: none;
+  }
+
+  &--icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+}

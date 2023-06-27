@@ -1,0 +1,8 @@
+.logo {
+  @include font($family: $accentFontFamily, $size: 2.25rem);
+  text-transform: lowercase;
+
+  &--small {
+    @include font($size: 1.75rem);
+  }
+}

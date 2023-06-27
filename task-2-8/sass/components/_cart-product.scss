@@ -1,0 +1,45 @@
+.cart-product {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  &__delete {
+    display: none;
+    position: absolute;
+    top: -0.75em;
+    left: -0.75em;
+
+    @include font($size: 0.75rem);
+
+    .cart-product:hover & {
+      display: block;
+    }
+  }
+
+  &__img {
+    width: 100px;
+    height: calc(100px * 2 / 3);
+
+    border-radius: $baseRadius;
+    object-fit: cover;
+  }
+
+  &__info {
+    flex: 1;
+    align-self: stretch;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+  }
+
+  &__name {
+    @include font($size: 1rem, $weight: 500);
+  }
+
+  &__price {
+    @include font($size: 1.25rem);
+    color: $lightTextColor;
+  }
+}

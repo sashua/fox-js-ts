@@ -1,0 +1,554 @@
+[
+  {
+    "id": "61dcfa9e-bb98-5b12-b662-04019a274014",
+    "brand": "Nike",
+    "model": "Pegasus 39",
+    "info": "Road Running Shoes",
+    "price": 130,
+    "img": "84f6e99a-4538-46a6-9ae6-d46a0560d9fa.webp"
+  },
+  {
+    "id": "5dfe4da9-d7be-5b08-af13-a23afda215c4",
+    "brand": "Nike",
+    "model": "Invincible Run",
+    "info": "Road Running Shoes",
+    "price": 180,
+    "img": "5c53bfd0-00dc-48a0-a737-8e7ce3dd9b1b.webp"
+  },
+  {
+    "id": "6184ad52-e534-5ad2-acb8-719760211354",
+    "brand": "Nike",
+    "model": "Revolution 6 Next Nature",
+    "info": "Road Running Shoes",
+    "price": 70,
+    "img": "a035e091-9378-4126-a0ce-e3c3091b1a1b.webp"
+  },
+  {
+    "id": "c5330b9c-7e62-5860-bf2d-c06546b1bc90",
+    "brand": "Nike",
+    "model": "Infinity React 3",
+    "info": "Road Running Shoes",
+    "price": 160,
+    "img": "cf6f6282-5af3-4c2c-82a8-e16c2abc5ed8.webp"
+  },
+  {
+    "id": "b66f92b1-0cd8-5569-8125-4898377c428f",
+    "brand": "Nike",
+    "model": "Free Run 5.0",
+    "info": "Road Running Shoes",
+    "price": 100,
+    "img": "51e34f44-88d0-408e-ac6f-fe924c313a2e.webp"
+  },
+  {
+    "id": "67b49d8f-0073-5596-a1c1-1992621d7baa",
+    "brand": "Nike",
+    "model": "Vaporfly NEXT% 2",
+    "info": "Road Racing Shoes",
+    "price": 250,
+    "img": "ef94b7d1-fe13-4e45-afdb-6f3a8dfc423a.webp"
+  },
+  {
+    "id": "9d590180-c5e9-542e-9326-da94223dcd3b",
+    "brand": "Nike",
+    "model": "Pegasus Train 4 GORE-TEX",
+    "info": "Waterproof Trail Running Shoes",
+    "price": 160,
+    "img": "6d97ae8b-2d49-4f31-9dfd-d454e7e179b2.webp"
+  },
+  {
+    "id": "e4068718-fc07-52fd-b040-1f9c336e49e5",
+    "brand": "Nike",
+    "model": "Air Zoom Pegasus 39 Shield",
+    "info": "Weatherized Road Running Shoes",
+    "price": 140,
+    "img": "f96fcf28-55e0-4d0f-9510-a30766b68e1f.webp"
+  },
+  {
+    "id": "a026f63a-6396-5fb1-a050-1cda2124ee41",
+    "brand": "Nike",
+    "model": "Air Zoom Vomero 16",
+    "info": "Road Running Shoes",
+    "price": 150,
+    "img": "34b3197a-253f-48d1-8ae6-40145d3d4929.webp"
+  },
+  {
+    "id": "83377bfd-e2b8-5e5a-ae44-a92bb91d1573",
+    "brand": "Nike",
+    "model": "Air Zoom Alphafly NEXT% 2",
+    "info": "Road Racing Shoes",
+    "price": 275,
+    "img": "b6e11cbd-509d-483d-b21d-850e2d7924ca.webp"
+  },
+  {
+    "id": "4af8ab8c-ed2a-5d23-a67b-83964eb64f9f",
+    "brand": "Nike",
+    "model": "Wildhorse 7",
+    "info": "Trail Running Shoes",
+    "price": 130,
+    "img": "0c06a2d9-5d3b-4e53-b402-220ddda02649.webp"
+  },
+  {
+    "id": "1777ec3a-024b-5090-ba59-a29fd0904e3f",
+    "brand": "Nike",
+    "model": "Air Zoom Pegasus FlyEase",
+    "info": "Easy On/Off Road Running Shoes",
+    "price": 130,
+    "img": "c3fc435a-d8cb-4312-8df3-1971bd5936e3.webp"
+  },
+  {
+    "id": "629a0341-65e2-519d-a1ce-f21dd7c15f32",
+    "brand": "Nike",
+    "model": "Zoom Rival XC 5",
+    "info": "Track & Field Distance Spikes",
+    "price": 65,
+    "img": "dc7538b2-596d-4713-9fe7-bf9301d4d3f0.webp"
+  },
+  {
+    "id": "4a24c8ee-6b73-5c5c-afb1-777a5e3fd8ff",
+    "brand": "Nike",
+    "model": "Zoom Superfly Elite 2",
+    "info": "Track & Field Sprinting Spikes",
+    "price": 150,
+    "img": "5f4252cf-ecf1-45e4-81f0-455bca04815d.webp"
+  },
+  {
+    "id": "19119dae-2fac-55e3-a22d-3d8176b38a68",
+    "brand": "Nike",
+    "model": "Juniper Trail",
+    "info": "Trail Running Shoes",
+    "price": 70,
+    "img": "160c3749-8b2f-4c7d-9a8c-517925c2ba30.webp"
+  },
+  {
+    "id": "dc1405f0-96b6-5149-bd33-a3ad70e20114",
+    "brand": "Nike",
+    "model": "Quest 3",
+    "info": "Road Running Shoes",
+    "price": 75,
+    "img": "d41e7b68-abf8-48ce-afed-09f46020e702.webp"
+  },
+  {
+    "id": "5368cf2e-e8a3-5241-9f06-c11532a5432d",
+    "brand": "Nike",
+    "model": "Escape Run",
+    "info": "Road Running Shoes",
+    "price": 100,
+    "img": "2ecf856b-1999-4b0a-acae-ee4d77475a21.webp"
+  },
+  {
+    "id": "a839775a-736e-579a-85f1-fab893d6774b",
+    "brand": "Nike",
+    "model": "Zoom Rival",
+    "info": "Track & Field Multi-Event Spikes",
+    "price": 70,
+    "img": "aafd661d-dfa4-4736-bce4-a8addae07cfa.webp"
+  },
+  {
+    "id": "d143a53f-74b7-5ed9-8934-4516e04bbe06",
+    "brand": "Nike",
+    "model": "Revolution 6 FlyEase Next Nature",
+    "info": "Easy On/Off Road Running Shoes",
+    "price": 65,
+    "img": "69e971fb-8b45-4a94-a4be-24da25ff1d5d.webp"
+  },
+  {
+    "id": "9278f9a2-ad07-57bd-a57f-20f41929d53a",
+    "brand": "Nike",
+    "model": "Air Zoom Terra Kiger 7",
+    "info": "Trail Running Shoes",
+    "price": 140,
+    "img": "9084ae2f-b3d4-4bc9-b863-839f2a1be64d.webp"
+  },
+  {
+    "id": "a3d41544-c893-5ed5-a5c5-dbda8bb1cca3",
+    "brand": "Asics",
+    "model": "Gel-Numbus 24",
+    "info": "Road Running Shoes",
+    "price": 165,
+    "img": "1011B359_403_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "1866733a-3fc5-5603-b31d-4cea99abc15d",
+    "brand": "Asics",
+    "model": "Gel-Cumulus 24",
+    "info": "Road Running Shoes",
+    "price": 135,
+    "img": "1012B206_300_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "fe07a969-5730-5e86-901e-2dfd4d033281",
+    "brand": "Asics",
+    "model": "Gel-Pulse 13",
+    "info": "Road Running Shoes",
+    "price": 100,
+    "img": "1011B175_402_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "b3f03ca6-2e7f-5391-8175-e9deb146e05e",
+    "brand": "Asics",
+    "model": "GT-2000 10",
+    "info": "Road Running Shoes",
+    "price": 135,
+    "img": "1011B185_403_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "194e7b13-8e9b-5b77-be5d-43dc36fd10bf",
+    "brand": "Asics",
+    "model": "Novablast 3",
+    "info": "Road Running Shoes",
+    "price": 135,
+    "img": "1011B458_001_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "694d138d-b418-5878-9e51-d240ff37aea7",
+    "brand": "Asics",
+    "model": "Kinsei Blast LE",
+    "info": "Road Running Shoes",
+    "price": 190,
+    "img": "1011B332_400_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "378a0dfe-31bf-582e-9851-50d65d41e83c",
+    "brand": "Asics",
+    "model": "GT-1000 11 TR",
+    "info": "Road Running Shoes",
+    "price": 115,
+    "img": "1012B388_001_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "99d4be5a-2b9e-5720-936a-1cbdab2696b8",
+    "brand": "Asics",
+    "model": "Gel-Kayano 29",
+    "info": "Road Running Shoes",
+    "price": 175,
+    "img": "1011B440_022_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "934c5d3b-8ae7-57ff-a754-1461e40da4a8",
+    "brand": "Asics",
+    "model": "Magic Speed 2",
+    "info": "Road Running Shoes",
+    "price": 170,
+    "img": "1011B443_750_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "0fb7ca44-8751-53c9-84d0-93d4a44cdeaa",
+    "brand": "Asics",
+    "model": "Metaspeed Sky+",
+    "info": "Road Running Shoes",
+    "price": 225,
+    "img": "1013A115_001_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "7449f4b1-4ff3-564e-88e3-e854f2e8c2b1",
+    "brand": "Asics",
+    "model": "Jolt 3",
+    "info": "Road Running Shoes",
+    "price": 55,
+    "img": "1012A908_411_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "d02233ee-2caa-5301-82db-4b2a3f27e05f",
+    "brand": "Asics",
+    "model": "Noosa Tri 14",
+    "info": "Road Running Shoes",
+    "price": 125,
+    "img": "1011B368_300_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "be010e64-bfd6-5fce-a74b-f9322241dfba",
+    "brand": "Asics",
+    "model": "Gel-Venture 8",
+    "info": "Trail Running Shoes",
+    "price": 70,
+    "img": "1011A824_303_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "e7dab6b1-70bf-5aef-a8be-bbed76a6c0f7",
+    "brand": "Asics",
+    "model": "Gel-Trabuco 10 GTX",
+    "info": "Trail Running Shoes",
+    "price": 145,
+    "img": "1012B175_002_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "f3dafa8a-f0ed-511b-8db5-d6e279198ce4",
+    "brand": "Asics",
+    "model": "Fuji Lite 3",
+    "info": "Trail Running Shoes",
+    "price": 125,
+    "img": "1011B467_300_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "abd81d49-7659-5eef-8203-7ef90a928b9e",
+    "brand": "Asics",
+    "model": "Gel-Venture 8 MT",
+    "info": "Trail Running Shoes",
+    "price": 80,
+    "img": "1011A993_005_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "1b5c0783-aa88-5d80-ba41-ce69591234da",
+    "brand": "Asics",
+    "model": "Gel-Sonoma 6",
+    "info": "Trail Running Shoes",
+    "price": 80,
+    "img": "1012A922_300_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "8dddc554-da52-58d0-861c-3e84c44dcb8d",
+    "brand": "Asics",
+    "model": "Trabuco Max",
+    "info": "Trail Running Shoes",
+    "price": 150,
+    "img": "1011B028_006_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "a9feb4f7-4133-53be-904b-3de42f6528cb",
+    "brand": "Asics",
+    "model": "Fujispeed",
+    "info": "Trail Running Shoes",
+    "price": 150,
+    "img": "1012B176_002_SB_FR_GLB.jpg"
+  },
+  {
+    "id": "865a5349-ba5b-5ed2-9234-550364afd766",
+    "brand": "Puma",
+    "model": "evoSPEED Sprint 14",
+    "info": "Track & Field Shoes",
+    "price": 80,
+    "img": "evoSPEED-Sprint-14-Track-and-Field-Shoes.jpg"
+  },
+  {
+    "id": "8abf7809-58bf-5da1-9d8a-3739f105d06f",
+    "brand": "Puma",
+    "model": "evoSPEED Distance 10",
+    "info": "Track & Field Shoes",
+    "price": 90,
+    "img": "evoSPEED-Distance-10-Track-and-Field-Shoes.jpg"
+  },
+  {
+    "id": "3f6aee57-4196-57bd-8974-b1c3394ebe5b",
+    "brand": "Puma",
+    "model": "evoSPEED Electric 12",
+    "info": "Track & Field Shoes",
+    "price": 120,
+    "img": "evoSPEED-Electric-12-Track-and-Field-Shoes.jpg"
+  },
+  {
+    "id": "583b246e-7a98-5216-8695-e2ffa17b9cb4",
+    "brand": "Puma",
+    "model": "Fuse 2.0",
+    "info": "Training Shoes",
+    "price": 100,
+    "img": "Fuse-2-Training-Shoes.webp"
+  },
+  {
+    "id": "4e882d64-04d7-5258-a155-aa491bd74cfe",
+    "brand": "Puma",
+    "model": "Pure XT Fresh",
+    "info": "Training Shoes",
+    "price": 80,
+    "img": "Pure-XT-Fresh-Training-Shoes.webp"
+  },
+  {
+    "id": "4d74f372-0e39-5e39-b823-d7149c5c7e54",
+    "brand": "Puma",
+    "model": "Voyage Nitro Gore-Tex",
+    "info": "Running Shoes",
+    "price": 150,
+    "img": "Voyage-Nitro-Gore-Tex-Running-Shoes.webp"
+  },
+  {
+    "id": "aa623594-5b5d-5c60-aac0-1e02f0973c87",
+    "brand": "Puma",
+    "model": "Liberate Nitro",
+    "info": "Running Shoes",
+    "price": 110,
+    "img": "Liberate-Nitro-Running-Shoes.webp"
+  },
+  {
+    "id": "4e9c1a9d-8a5b-524c-9b8a-b612eb6dbbfa",
+    "brand": "Puma",
+    "model": "Velocity Nitro 2",
+    "info": "Running Shoes",
+    "price": 120,
+    "img": "Velocity-Nitro-2-Running-Shoes.webp"
+  },
+  {
+    "id": "8d81c2a4-5158-5373-8240-d15c2abb6225",
+    "brand": "Puma",
+    "model": "Deviate Nitro Elite Fireglow",
+    "info": "Running Shoes",
+    "price": 200,
+    "img": "Deviate-Nitro-Elite-Fireglow-Running-Shoes.webp"
+  },
+  {
+    "id": "081da09d-945e-50ad-9b4b-f341177279f1",
+    "brand": "Puma",
+    "model": "Voyage Nitro",
+    "info": "Running Shoes",
+    "price": 130,
+    "img": "Voyage-Nitro-Running-Shoes.webp"
+  },
+  {
+    "id": "994643dd-6586-50f8-98c5-4a42dd3fbd85",
+    "brand": "Craft",
+    "model": "CTM Ultra Carbon 2",
+    "info": "Road Running Shoes",
+    "price": 320,
+    "img": "CTM-Ultra-Carbon-2-M_700x.webp"
+  },
+  {
+    "id": "6eb8cd81-9d6d-5713-9f6a-8be6fc9f10eb",
+    "brand": "Craft",
+    "model": "CTM Ultra 2",
+    "info": "Road Running Shoes",
+    "price": 220,
+    "img": "CTM-Ultra-2-M_700x.webp"
+  },
+  {
+    "id": "095efaf8-8626-5c1e-8b4e-85f4838f6d90",
+    "brand": "Craft",
+    "model": "PRO Endur Distance",
+    "info": "Road Running Shoes",
+    "price": 200,
+    "img": "1912183-663573_PROEndurDistanceM_700x.webp"
+  },
+  {
+    "id": "bcf1a06a-eaa4-5f9f-a32b-c7cb45e62ef3",
+    "brand": "Craft",
+    "model": "CTM Ultra Carbon Race Rebel",
+    "info": "Road Running Shoes",
+    "price": 320,
+    "img": "Ultra-Carbon-Race-Rebel-M_700x.webp"
+  },
+  {
+    "id": "2fa88539-24f5-543b-b51e-c13c0392d1cc",
+    "brand": "Craft",
+    "model": "CTM Ultra Carbon Trail",
+    "info": "Trail Running Shoes",
+    "price": 320,
+    "img": "1912171-999358_CTMUltraCarbonTrailM_Front_700x.webp"
+  },
+  {
+    "id": "72ff1af4-fdae-5cc7-a8bb-f658fd30e675",
+    "brand": "Craft",
+    "model": "CTM Ultra Trail",
+    "info": "Trail Running Shoes",
+    "price": 220,
+    "img": "1912657-935698_CTMUltraTrailM_Front_700x.webp"
+  },
+  {
+    "id": "d0c0bda2-1fe1-5919-8a72-ba77982a785b",
+    "brand": "Craft",
+    "model": "Nordic Hydro Mid",
+    "info": "Trail Running Shoes",
+    "price": 220,
+    "img": "1909294-999999_NordicFuseknitMidM_Front_700x.webp"
+  },
+  {
+    "id": "8242f6f8-089e-571a-8f56-ab9d4ef862e5",
+    "brand": "Craft",
+    "model": "ADV Nordic Speed 2",
+    "info": "Trail Running Shoes",
+    "price": 180,
+    "img": "Nordic-Speed-M_700x.webp"
+  },
+  {
+    "id": "613c52af-0ace-5a52-a6dd-dea560f32796",
+    "brand": "Brooks",
+    "model": "Glicerin GTS 20",
+    "info": "Road Running Shoes",
+    "price": 160,
+    "img": "110383-444-l-glycerin-gts-20-supportive-cushion-running-shoe.jpg"
+  },
+  {
+    "id": "d50ca068-6827-50d3-a72d-535e627ea31f",
+    "brand": "Brooks",
+    "model": "Adrenaline GTS 22",
+    "info": "Road Running Shoes",
+    "price": 140,
+    "img": "110366-435-l-adrenaline-gts-22-cushion-running-shoe.jpg"
+  },
+  {
+    "id": "49fb7e6e-760d-5fcd-9d5e-264b385b722e",
+    "brand": "Brooks",
+    "model": "Levitate 6",
+    "info": "Road Running Shoes",
+    "price": 150,
+    "img": "110395-192-l-levitate-6-energy-return-running-shoe.jpg"
+  },
+  {
+    "id": "6291103e-8a79-525d-8f44-c54ebd552e65",
+    "brand": "Brooks",
+    "model": "Cascadia 16",
+    "info": "Trail Running Shoes",
+    "price": 130,
+    "img": "110376-008-l-cascadia-16.jpg"
+  },
+  {
+    "id": "2e985760-0976-5195-8409-a7eabf2b0d45",
+    "brand": "Brooks",
+    "model": "Caldera 6",
+    "info": "Trail Running Shoes",
+    "price": 150,
+    "img": "110379-756-l-caldera-6-trail-running-shoe.jpg"
+  },
+  {
+    "id": "01db8b39-793e-58dd-800d-982fc1c3d281",
+    "brand": "Brooks",
+    "model": "Revel 5",
+    "info": "Road Running Shoes",
+    "price": 100,
+    "img": "110374-038-l-revel-5-energy-return-running-shoe.jpg"
+  },
+  {
+    "id": "7a48078e-f173-5cf1-aecc-ae890a9d70b4",
+    "brand": "Brooks",
+    "model": "Divide 3",
+    "info": "Trail Running Shoes",
+    "price": 100,
+    "img": "110381-269-l-divide-3-trail-running-shoe.jpg"
+  },
+  {
+    "id": "fcadff89-da6c-5e16-9081-0651d222e99b",
+    "brand": "Brooks",
+    "model": "Launch GTS 9",
+    "info": "Road Running Shoes",
+    "price": 110,
+    "img": "110387-854-l-launch-gts-9-fast-and-supportive-running-shoe.jpg"
+  },
+  {
+    "id": "a76e5dc1-065e-5d37-86ad-d4bf65e90ee8",
+    "brand": "Brooks",
+    "model": "Catamount",
+    "info": "Trail Running Shoes",
+    "price": 160,
+    "img": "110352-411-l-catamount-trail-running-shoe.jpg"
+  },
+  {
+    "id": "b2155516-dc2c-564e-b0d1-7ddf39fa514e",
+    "brand": "Brooks",
+    "model": "Draft XC Spikeless",
+    "info": "Track & Field Running Shoes",
+    "price": 65,
+    "img": "100038-129-l-draft-xc-spikeless-unisex-running-flats.jpg"
+  },
+  {
+    "id": "6b6188e1-7ff4-551c-95ec-26320a695e75",
+    "brand": "Brooks",
+    "model": "Wire 8",
+    "info": "Track & Field Running Shoes",
+    "price": 150,
+    "img": "100044-467-l-wire-8-unisex-track-shoes.jpg"
+  },
+  {
+    "id": "2154abee-aa24-5f1a-95a3-a8f56444299a",
+    "brand": "Brooks",
+    "model": "Trace 2",
+    "info": "Road Running Shoes",
+    "price": 100,
+    "img": "110388-471-l-trace-2-neutral-cushion-running-shoe.jpg"
+  }
+]

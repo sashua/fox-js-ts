@@ -1,0 +1,16 @@
+.hero {
+  padding: 250px 0;
+
+  color: $whiteColor;
+  background: $heroBgGradient, center / cover no-repeat url($heroBgImage);
+
+  &__title {
+    margin-bottom: 0.25em;
+    @include font($family: $accentFontFamily, $size: 3.5rem);
+  }
+
+  &__text {
+    margin-bottom: 2em;
+    @include font($size: 1.5rem);
+  }
+}

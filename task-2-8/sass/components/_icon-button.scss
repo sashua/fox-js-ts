@@ -1,0 +1,54 @@
+.icon-button {
+  position: relative;
+  display: inline-block;
+  padding: 0.5em;
+
+  transition: transform $baseTransition;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
+
+  &--accent {
+    color: $whiteColor;
+    background: $baseAccentColor;
+    border: 1px solid $baseAccentColor;
+    border-radius: 50%;
+    transition: transform $baseTransition, color $baseTransition,
+      background-color $baseTransition;
+
+    &:hover,
+    &:focus {
+      color: $baseAccentColor;
+      background: transparent;
+    }
+  }
+
+  &__sticker {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+
+    @include font($size: 0.6em, $height: 1);
+    color: $whiteColor;
+    background: $baseAccentColor;
+    border: 1px solid $baseAccentColor;
+    border-radius: 50%;
+    visibility: hidden;
+
+    &.active {
+      visibility: visible;
+    }
+
+    .icon-button--accent & {
+      color: $baseAccentColor;
+      background: $whiteColor;
+    }
+  }
+}

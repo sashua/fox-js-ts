@@ -1,0 +1,10 @@
+.breadcrumbs {
+  padding: 2em 0;
+
+  color: $lightTextColor;
+  background: $lightBgColor;
+
+  &__text {
+    @include font($size: 1.25rem);
+  }
+}

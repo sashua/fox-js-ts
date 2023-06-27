@@ -1,0 +1,55 @@
+.product {
+  display: flex;
+  flex-flow: column;
+
+  border-radius: $baseRadius;
+  box-shadow: $cardShadow;
+
+  &__photo {
+    position: relative;
+    padding-top: calc(100% * 2 / 3);
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  &__info {
+    flex: 1;
+
+    display: flex;
+    flex-flow: column;
+    gap: 0.5em;
+    padding: 1.25em 1em;
+
+    text-align: left;
+  }
+
+  &__name {
+    @include font($size: 1.125rem, $weight: 500);
+  }
+
+  &__text {
+    @include font($size: 0.875rem);
+    color: $lightTextColor;
+  }
+
+  &__price-wrap {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1em;
+    margin-top: auto;
+  }
+
+  &__price {
+    @include font($size: 1.375rem, $weight: 500);
+    color: $baseAccentColor;
+  }
+}

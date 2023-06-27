@@ -1,0 +1,47 @@
+.section {
+  padding: 4em 0;
+  text-align: center;
+
+  &--products {
+    .container {
+      display: flex;
+      gap: 30px;
+    }
+
+    .filter {
+      flex: 0 12em;
+    }
+
+    .product-list {
+      flex: 1;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__title {
+    margin-bottom: 1em;
+    @include font($size: 2rem, $weight: 500);
+
+    &:before {
+      content: "/ ";
+      color: $baseAccentColor;
+    }
+  }
+
+  &__text {
+    max-width: 800px;
+    margin: 0 auto;
+
+    @include font($height: 1.75);
+    text-align: left;
+    color: $lightTextColor;
+
+    &:not(:last-child) {
+      margin-bottom: 2em;
+    }
+  }
+
+  &__button-all {
+    margin-top: 2.5em;
+  }
+}

@@ -1,7 +1,7 @@
 {
-  "name": "task-2-7",
+  "name": "task-2-8",
   "version": "1.0.0",
-  "description": "Task 2.7 - Create a page with a list of countries",
+  "description": "Task 2.8 - Create an online store",
   "private": true,
   "scripts": {
     "start": "sass --watch sass/main.scss css/style.css",
